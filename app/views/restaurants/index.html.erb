@@ -1,9 +1,14 @@
 <% if @restaurants.all.any? %>
-
+	<ul>
 	<% @restaurants.all.each do |restaurant| %>
-		<%= restaurant.name %>
-	<% end %>
+		<li><%= restaurant.name %>
 
+		<%= link_to "Edit #{restaurant.name}", edit_restaurant_path(restaurant) %>
+
+		</li>
+
+	<% end %>
+	</ul>
 <% else %>
 
 Lol no food 4 u!

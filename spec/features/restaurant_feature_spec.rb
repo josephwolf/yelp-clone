@@ -20,3 +20,16 @@ describe 'creating a restaurant' do
 		expect(page).to have_content 'Big Riccos'
 	end
 end
+
+describe 'editing a restaurant' do
+
+	before { Restaurant.create(name: 'Big Riccos', address: '1 city road') }
+
+	it 'can save edits and changes' do
+		visit '/restaurants'
+		click_link 'Edit Big Riccos'
+		fill_in 'Name', with: 'Night Vale city hall'
+		click_button 'Update Restaurant'
+		expect(page).to have_content 'Night Vale city hall'
+	end
+end
