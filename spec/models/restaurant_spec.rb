@@ -1,9 +1,14 @@
 require 'spec_helper'
 
 describe Restaurant do
-	xit 'is not valid withouot a name' do
-		restaurant = Restaurant.new(name: nil)
-		expect (restaurant).to have(1) 
-		expect (restaurant.valid?).to eq false
+
+	it 'should not be valid without capitalization' do
+		restaurant = Restaurant.new(name: 'riccos')
+		expect(restaurant).to have(1).error_on(:name)
+	end
+
+	it 'should not be valid without an address of sufficient length' do
+		restaurant = Restaurant.new(address: 'na')
+		expect(restaurant).to have(1).error_on(:address)
 	end
 end

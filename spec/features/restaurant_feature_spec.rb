@@ -9,7 +9,12 @@ describe 'restaurants index page' do
 	end
 end
 
+
+
 describe 'creating a restaurant' do
+
+	context 'with valid data' do 
+
 	it 'adds a restaurant to the index' do
 		visit '/restaurants/new'
 		fill_in 'Name', with: 'Big Riccos'
@@ -18,6 +23,22 @@ describe 'creating a restaurant' do
 
 		expect(current_path).to eq '/restaurants'
 		expect(page).to have_content 'Big Riccos'
+	end
+	
+	end
+
+	context 'with invalid data' do 
+
+	it 'does not add a restaurant to the index' do
+		visit '/restaurants/new'
+		fill_in 'Name', with: 'big riccos'
+		fill_in 'Address', with: '1'
+		click_button 'Create Restaurant'
+
+		expect(current_path).to eq '/restaurants'
+		expect(page).to have_content 'errors'
+	end
+	
 	end
 end
 
@@ -33,3 +54,20 @@ describe 'editing a restaurant' do
 		expect(page).to have_content 'Night Vale city hall'
 	end
 end
+
+describe 'deteling a restaurant' do
+
+	before { Restaurant.create(name: 'Big Riccos', address: '1 city road') }
+
+	it 'can save edits and changes' do
+		visit '/restaurants'
+		click_link 'Delete Big Riccos'
+		expect(page).not_to have_content 'Big Riccos'
+		expect(page).to have_content 'Baleted!'
+	end
+
+
+end
+
+
+

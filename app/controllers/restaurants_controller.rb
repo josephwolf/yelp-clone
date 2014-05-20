@@ -17,14 +17,16 @@ class RestaurantsController < ApplicationController
 		@restaurant = Restaurant.find(params[:id])
 	end
 
-	def delete
-
+	def destroy
+		@restaurant = Restaurant.find(params[:id])
+		@restaurant.destroy
+		flash[:notice] = 'Baleted!'
+		redirect_to '/restaurants'
 	end
 
 	def update
 		@restaurant = Restaurant.find(params[:id])
 		@restaurant = @restaurant.update(params[:restaurant].permit(:name, :address))
 		redirect_to '/restaurants'
-
 	end
 end
