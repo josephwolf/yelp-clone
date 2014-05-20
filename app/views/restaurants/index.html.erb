@@ -1,0 +1,11 @@
+<% if @restaurants.all.any? %>
+
+	<% @restaurants.all.each do |restaurant| %>
+		<%= restaurant.name %>
+	<% end %>
+
+<% else %>
+
+Lol no food 4 u!
+
+<% end %>
