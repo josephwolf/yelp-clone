@@ -75,7 +75,7 @@ describe 'deteling a restaurant' do
 		visit '/restaurants'
 		click_link 'Delete Big Riccos'
 		expect(page).not_to have_content 'Big Riccos'
-		expect(page).to have_content 'Baleted!'
+		expect(page).to have_content 'Baleeted!'
 	end
 
 

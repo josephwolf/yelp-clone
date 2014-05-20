@@ -10,16 +10,19 @@
 
 		<%= link_to "Delete #{restaurant.name}", restaurant_path(restaurant), method: :delete, data: {confirm: 'Can you live with this?'} %>
 
+		<%= link_to "Review #{restaurant.name}", new_restaurant_review_path(restaurant) %>
+
 		</li>
 
 	<% end %>
 	</ul>
 
-<input id="newRest" type="submit" value="Add New Restaurant" 
-    onclick="window.location='/restaurants/new';" />
 
 <% else %>
 
 <h2>Lol no food 4 u!</h2>
 
 <% end %>
+
+<input id="newRest" type="submit" value="Add New Restaurant" 
+    onclick="window.location='/restaurants/new';" />

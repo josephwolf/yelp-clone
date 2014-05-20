@@ -4,4 +4,6 @@ class Restaurant < ActiveRecord::Base
 
 	validates :address, presence: :true, length: { minimum: 3 }
 
+	has_many :reviews
+
 end

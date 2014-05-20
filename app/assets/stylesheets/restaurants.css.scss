@@ -5,6 +5,12 @@ body {
 
 }
 
+ul {
+
+/*	display: none;*/
+
+}
+
 li {
 
 	background-color: #ccc;
@@ -12,11 +18,14 @@ li {
 	margin: 5px;
 	padding: 5px;
 
+
 }
 
 #newRest {
+
 	background-color: #E3DECA;
 	border-radius: 3px;
 	padding: 5px;
 	border: 0px;
+	
 }
