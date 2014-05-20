@@ -1,17 +1,25 @@
+<h1>Kelp.com (do not steal!)</h1>
+
 <% if @restaurants.all.any? %>
+
 	<ul>
 	<% @restaurants.all.each do |restaurant| %>
-		<li><%= restaurant.name %>
+		<li><%= restaurant.name %> Cuisine: <%= restaurant.cuisine %>
 
 		<%= link_to "Edit #{restaurant.name}", edit_restaurant_path(restaurant) %>
+
 		<%= link_to "Delete #{restaurant.name}", restaurant_path(restaurant), method: :delete, data: {confirm: 'Can you live with this?'} %>
 
 		</li>
 
 	<% end %>
 	</ul>
+
+<input id="newRest" type="submit" value="Add New Restaurant" 
+    onclick="window.location='/restaurants/new';" />
+
 <% else %>
 
-Lol no food 4 u!
+<h2>Lol no food 4 u!</h2>
 
 <% end %>

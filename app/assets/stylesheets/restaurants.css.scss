@@ -1,3 +1,22 @@
-// Place all the styles related to the restaurants controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+	
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	margin: 20px;
+
+}
+
+li {
+
+	background-color: #ccc;
+	border-radius: 5px;
+	margin: 5px;
+	padding: 5px;
+
+}
+
+#newRest {
+	background-color: #E3DECA;
+	border-radius: 3px;
+	padding: 5px;
+	border: 0px;
+}

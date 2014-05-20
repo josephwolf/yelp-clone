@@ -19,13 +19,24 @@ describe 'creating a restaurant' do
 		visit '/restaurants/new'
 		fill_in 'Name', with: 'Big Riccos'
 		fill_in 'Address', with: '1 City Road, London'
+		fill_in 'Cuisine', with: 'Pizza'
 		click_button 'Create Restaurant'
 
 		expect(current_path).to eq '/restaurants'
 		expect(page).to have_content 'Big Riccos'
 	end
 	
+	it 'adds a cuisine to a new restauraunt' do
+		visit '/restaurants/new'
+		fill_in 'Name', with: 'Big Riccos'
+		fill_in 'Address', with: '1 City Road, London'
+		fill_in 'Cuisine', with: 'Pizza'
+		click_button 'Create Restaurant'
+		expect(current_path).to eq '/restaurants'
+		expect(page).to have_content 'Pizza'
+
 	end
+end
 
 	context 'with invalid data' do 
 
@@ -33,6 +44,7 @@ describe 'creating a restaurant' do
 		visit '/restaurants/new'
 		fill_in 'Name', with: 'big riccos'
 		fill_in 'Address', with: '1'
+		fill_in 'Cuisine', with: 'Pizza'
 		click_button 'Create Restaurant'
 
 		expect(current_path).to eq '/restaurants'
@@ -44,7 +56,7 @@ end
 
 describe 'editing a restaurant' do
 
-	before { Restaurant.create(name: 'Big Riccos', address: '1 city road') }
+	before { Restaurant.create(name: 'Big Riccos', address: '1 city road', cuisine: 'Pizza') }
 
 	it 'can save edits and changes' do
 		visit '/restaurants'
@@ -57,7 +69,7 @@ end
 
 describe 'deteling a restaurant' do
 
-	before { Restaurant.create(name: 'Big Riccos', address: '1 city road') }
+	before { Restaurant.create(name: 'Big Riccos', address: '1 city road', cuisine: 'Pizza') }
 
 	it 'can save edits and changes' do
 		visit '/restaurants'
