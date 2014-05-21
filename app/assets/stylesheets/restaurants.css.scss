@@ -2,30 +2,58 @@ body {
 	
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	margin: 20px;
+	display: flex;
+	list-style: none;
 
 }
 
-ul {
+#left {
 
-/*	display: none;*/
+flex: 50%;
 
 }
 
-li {
+#right {
+
+	flex: 50%;
+
+}
+
+h1 {
+
+	margin-left: 10%;
+
+}
+
+#restaurant {
 
 	background-color: #ccc;
 	border-radius: 5px;
 	margin: 5px;
 	padding: 5px;
+	height: auto;
+
 
 
 }
 
-#newRest {
+.button {
 
 	background-color: #E3DECA;
 	border-radius: 3px;
 	padding: 5px;
 	border: 0px;
 	
+}
+
+#reviews {
+	background-color: #E3DECA;
+	border-radius: 4px;
+	margin: 5px;
+	padding: 5px;
+	padding-left: 10px;
+}
+
+#rating {
+	font-weight: 4000;
 }

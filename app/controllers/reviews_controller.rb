@@ -6,8 +6,11 @@ def new
 end
 
 def create
+	
 	@restaurant = Restaurant.find(params[:restaurant_id])
 	@restaurant.reviews.create(params[:review].permit(:review, :rating))
+	redirect_to '/restaurants'
+
 end
 
 end
