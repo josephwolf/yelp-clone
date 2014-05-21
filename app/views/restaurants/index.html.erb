@@ -11,24 +11,24 @@
 	
 			<li>Cuisine: <%= restaurant.cuisine %></li>
 			<li>Address: <%= restaurant.address %></li>
-			<li>Has <%= pluralize restaurant.reviews.count, 'review' %> Average rating: <%= restaurant.average_rating %> </li>
+			<li>Has <%= pluralize restaurant.reviews.count, 'review' %> Average rating: <%= star_rating(restaurant.average_rating) %> </li>
 
 			Reviews: <% restaurant.reviews.each do |x| %>
 				<div id="reviews">
 				<%= x.review %>
-				<li>Rating: <%= x.rating %></li>
+				<li>Rating: <%= star_rating(x.rating) %></li>
 				</div>
 
 			<% end %>
 
-
+			<div id="buttons">
 			<div class="button"><%= link_to "Review #{restaurant.name}", 	new_restaurant_review_path(restaurant) %></div>
 
 			<div class="button"><%= link_to "Edit #{restaurant.name}", edit_restaurant_path(	restaurant) %></div>
 	
 			<div class="button"><%= link_to "Delete #{restaurant.name}", restaurant_path(	restaurant), method: :delete, data: {confirm: 'Can you live with this?'} %></div>
-	
-	
+			</div>
+			<div id="extraSpace"></div>
 			</div>
 		
 	<% end %>

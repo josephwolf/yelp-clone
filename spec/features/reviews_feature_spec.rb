@@ -32,7 +32,7 @@ describe 'average ratings' do
   it 'should display the average rating of a restaurant' do
     leave_review(4, 'would get food poisoning again!')
     leave_review(2, 'harrowing.')
-    expect(page).to have_content 'Average rating: 3'
+    expect(page).to have_content 'Average rating: ✦✦✦✧✧'
   end
 
 end
@@ -45,7 +45,7 @@ describe 'star ratings' do
 
   leave_review(4, 'would get food poisoning again!')
   leave_review(2, 'harrowing.')
-  
+
     expect(page).to have_content "✦✦✦✧✧"
     expect(page).to have_content "✦✦✦✦✧"
     expect(page).to have_content "✦✦✧✧✧"

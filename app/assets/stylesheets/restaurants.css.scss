@@ -37,12 +37,25 @@ h1 {
 
 }
 
+
+#buttons {
+	background-color: orange;
+	flex: 50%;
+
+}
+
+#extraSpace {
+	background-color: red;
+	flex: 50%;
+}
+
 .button {
 
 	background-color: #E3DECA;
 	border-radius: 3px;
 	padding: 5px;
 	border: 0px;
+	display: flex;
 	
 }
 
