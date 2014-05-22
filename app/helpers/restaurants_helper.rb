@@ -9,4 +9,10 @@ module RestaurantsHelper
 		return ( '✦' * black_star ) + ( '✧' * white_star)
 	end
 
+	def percent_rating(value)
+		return value unless value.respond_to?(:round)
+
+		return value * 20
+	end
+
 end

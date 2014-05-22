@@ -4,6 +4,11 @@ body {
 	margin: 20px;
 	display: flex;
 	list-style: none;
+	background: url(http://fc06.deviantart.net/fs19/f/2007/271/9/c/Kelp_Forest_2_by_Exodus5139.jpg) no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
 
 }
 
@@ -20,49 +25,66 @@ flex: 50%;
 }
 
 h1 {
-
+	color: white;
 	margin-left: 10%;
 
 }
 
 #restaurant {
 
+	list-style: none;
 	background-color: #ccc;
 	border-radius: 5px;
-	margin: 5px;
+	margin: 10px;
 	padding: 5px;
 	height: auto;
 
-
-
 }
 
+#newreview {
+	vertical-align: center;
+	background-color: orange;
+	border-radius: 5px;
+	margin: 10px;
+	margin-right: 5px;
+	padding-left: 15px;
+}
+
+#newreview  label {
+	color: white;
+}
 
 #buttons {
-	background-color: orange;
-	flex: 50%;
+	display: flex;
 
 }
 
 #extraSpace {
-	background-color: red;
-	flex: 50%;
+
+	flex: 1 55%;
 }
 
 .button {
 
+	border: 0px outset buttonface;
 	background-color: #E3DECA;
 	border-radius: 3px;
 	padding: 5px;
-	border: 0px;
-	display: flex;
+	margin: 2px;
+	flex: 1 15%;
+	align-items: flex-start;
+	text-align: center;
+	cursor: default;
+	color: buttontext;
+	box-sizing: border-box;
 	
 }
 
 #reviews {
 	background-color: #E3DECA;
 	border-radius: 4px;
-	margin: 5px;
+	margin: 5px 15px;
+
 	padding: 5px;
 	padding-left: 10px;
 }
