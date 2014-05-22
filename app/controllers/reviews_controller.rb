@@ -8,10 +8,9 @@ end
 def create
 
 	@restaurant = Restaurant.find(params[:restaurant_id])
-	@restaurant.reviews.create!(params[:review].permit(:review, :rating))
-	redirect_to '/restaurants'
-
-	# render json: review 
+	@review = @restaurant.reviews.create!(params[:review].permit(:review, :rating))
+	# redirect_to '/restaurants'
+	render 'create', content_type: :json 
 	# (delete line 12. replace with ^^)
 
 	# respond_to do |format|

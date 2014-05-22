@@ -1,56 +1,64 @@
+<template id="review_template">
+	<div class='review'>
+		{{ review }}
+		{{ star_rating }}
+	</div>
+</template>
+
 <div id="left">
-<h1>Kelp.com</h1>
+	<h1>Kelp.com</h1>
 
-<% if @restaurants.all.any? %>
-	<ul>
-	<% @restaurants.all.each do |restaurant| %>
-
-
-		<div id="restaurant">
-			<h4><%= restaurant.name %></h4>
+	<% if @restaurants.all.any? %>
+		<% @restaurants.all.each do |restaurant| %>
+			<div class="restaurant">
+				<h4><%= restaurant.name %></h4>
 	
-			<li>Cuisine: <%= restaurant.cuisine %></li>
-			<li>Address: <%= restaurant.address %></li>
-			<li>Has <%= pluralize restaurant.reviews.count, 'review' %> Average rating:
-				<%= percent_rating(restaurant.average_rating) %>%</li>
+				<ul>
+					<li>Cuisine: <%= restaurant.cuisine %></li>
+					<li>Address: <%= restaurant.address %></li>
+					<li>Has <%= pluralize restaurant.reviews.count, 'review' %>
+				</ul>
 
-			Reviews: <% restaurant.reviews.each do |x| %>
-				<div id="reviews">
-				<%= x.review %>
-				<li>Rating: <%= star_rating(x.rating) %></li>
+				 Average rating: <%= number_with_precision(percent_rating(restaurant.average_rating), precision: 1) %>%</li>
+
+				<li>Reviews:</li>
+				
+				<div class='reviews'>
+					<% restaurant.reviews.each do |x| %>
+						<div class='review'>
+							<%= x.review %>
+							Rating: <%= star_rating(x.rating) %>
+						</div>
+					<% end %>
 				</div>
 
-			<% end %>
 
-				<div id="newreview"><%= render 'newreview', restaurant: restaurant %></div>
+				<div class="newreview">
+					<%= render 'newreview', restaurant: restaurant %>
+				</div>
 
-			<div id="buttons">
-	
-				<div class="button"><%= link_to "Edit #{restaurant.name}", 	edit_restaurant_path(	restaurant) %></div>
+				<div class="buttons">
+					<div class="button">
+						<%= link_to "Edit #{restaurant.name}", 	edit_restaurant_path(	restaurant) %>
+					</div>
 		
-				<div class="button"><%= link_to "Delete #{restaurant.name}", 	restaurant_path(	restaurant), method: :delete, data: {confirm: 'Can you live with this?'} %></div>
+					<div class="button">
+						<%= link_to "Delete #{restaurant.name}", 	restaurant_path(	restaurant), method: :delete, data: {confirm: 'Can you live with this?'} %>
+					</div>
 
-			<div id="extraSpace">
-				
-			</div>
-			</div>
+					<div class="extraSpace"></div>
+				</div>
 
-		</div>
-		
+			</div>
+		<% end %>
+	<% else %>
+		<h2>Lol no food 4 u!</h2>
 	<% end %>
-	</ul>
 
-
-<% else %>
-
-<h2>Lol no food 4 u!</h2>
-
-<% end %>
-
-<input class="button" type="submit" value="Add New Restaurant" 
+	<input class="button" type="submit" value="Add New Restaurant" 
     onclick="window.location='/restaurants/new';" />
+</div>
 
-    </div>
-
-    <div id="right">
-    </div>
+<div id="right">
+a
+</div>

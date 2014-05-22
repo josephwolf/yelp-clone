@@ -9,6 +9,7 @@ body {
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
+  	transition: 1s all ease;
 
 }
 
@@ -30,7 +31,7 @@ h1 {
 
 }
 
-#restaurant {
+.restaurant {
 
 	list-style: none;
 	background-color: #ccc;
@@ -41,7 +42,7 @@ h1 {
 
 }
 
-#newreview {
+.newreview {
 	vertical-align: center;
 	background-color: orange;
 	border-radius: 5px;
@@ -50,16 +51,24 @@ h1 {
 	padding-left: 15px;
 }
 
-#newreview  label {
+.newreview label {
+
+	display: table-cell;
 	color: white;
+    text-align: center;
+    vertical-align: middle;
 }
 
-#buttons {
+.newreview button {
+
+}
+
+.buttons {
 	display: flex;
 
 }
 
-#extraSpace {
+.extraSpace {
 
 	flex: 1 55%;
 }
@@ -80,7 +89,7 @@ h1 {
 	
 }
 
-#reviews {
+.review {
 	background-color: #E3DECA;
 	border-radius: 4px;
 	margin: 5px 15px;
@@ -89,6 +98,6 @@ h1 {
 	padding-left: 10px;
 }
 
-#rating {
+/*#rating {
 	font-weight: 4000;
-}
+}*/
