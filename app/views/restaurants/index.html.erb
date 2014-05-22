@@ -5,9 +5,15 @@
 	</div>
 </template>
 
-<div id="left">
-	<h1>Kelp.com</h1>
+<header>
 
+	<%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+
+	<h1>Kelp.com</h1>
+</header>
+
+<div id="main">
+<div id="left">
 	<% if @restaurants.all.any? %>
 		<% @restaurants.all.each do |restaurant| %>
 			<div class="restaurant">
@@ -60,5 +66,5 @@
 </div>
 
 <div id="right">
-a
+</div>
 </div>

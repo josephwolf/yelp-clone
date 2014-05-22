@@ -1,8 +1,7 @@
 body {
 	
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-	margin: 20px;
-	display: flex;
+	margin: 0px;
 	list-style: none;
 	background: url(http://fc06.deviantart.net/fs19/f/2007/271/9/c/Kelp_Forest_2_by_Exodus5139.jpg) no-repeat center center fixed; 
   	-webkit-background-size: cover;
@@ -13,20 +12,38 @@ body {
 
 }
 
+header {
+	position: fixed;
+	width: 5000px;
+	background-color: white;
+}
+
+#userOptions {
+
+	text-align: right;
+
+}
+
+#main {
+	display: flex;
+	margin-left: 20px;
+	padding-top: 120px;
+}
+
 #left {
 
-flex: 50%;
+flex: 1 50%;
 
 }
 
 #right {
 
-	flex: 50%;
+	flex: 1 50%;
 
 }
 
 h1 {
-	color: white;
+	color: black;
 	margin-left: 10%;
 
 }
@@ -44,7 +61,7 @@ h1 {
 
 .newreview {
 	vertical-align: center;
-	background-color: orange;
+	background-color: #97C2BD;
 	border-radius: 5px;
 	margin: 10px;
 	margin-right: 5px;
